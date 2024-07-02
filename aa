@@ -1,0 +1,32 @@
+class Address:
+    def __init__(self, street, city, state, zip_code):
+        self.street = street
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
+
+    def __str__(self):
+        return f"{self.street}, {self.city}, {self.state} {self.zip_code}"
+
+    def get_full_address(self):
+        return f"{self.street}, {self.city}, {self.state} {self.zip_code}"  
+
+    def get_city_state(self):
+        return f"{self.city}, {self.state}"
+
+# Пример использования библиотеки
+address1 = Address("123 Main Street", "Anytown", "CA", "91234")
+print(address1)  # Вывод: 123 Main Street, Anytown, CA 91234
+print(address1.get_full_address())  # Вывод: 123 Main Street, Anytown, CA 91234
+print(address1.get_city_state())  # Вывод: Anytown, CA
+
+from address_library import Address
+
+def main():
+    address1 = Address("123 Main Street", "Anytown", "CA", "91234")
+    print(address1.get_full_address())
+    address2 = Address("456 Oak Avenue", "Springfield", "IL", "62701")
+    print(address2.get_city_state())
+
+if __name__ == "__main__":
+    main()
